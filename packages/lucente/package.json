@@ -1,0 +1,60 @@
+{
+  "name": "lucente",
+  "version": "0.0.0",
+  "type": "module",
+  "bin": {
+    "lucente": "./bin/lucente.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "generated"
+  ],
+  "exports": {
+    ".": {
+      "types": "./generated/index.d.ts",
+      "default": "./generated/index.js"
+    },
+    "./runtime": {
+      "types": "./dist/runtime.d.ts",
+      "default": "./dist/runtime.js"
+    },
+    "./config": {
+      "types": "./dist/config.d.ts",
+      "default": "./dist/config.js"
+    },
+    "./metro": {
+      "types": "./dist/metro.d.ts",
+      "require": "./dist/metro.cjs",
+      "import": "./dist/metro.js"
+    },
+    "./compiler": {
+      "types": "./dist/compiler.d.ts",
+      "default": "./dist/compiler.js"
+    },
+    "./core": {
+      "types": "./dist/core.d.ts",
+      "default": "./dist/core.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "generate": "node ./bin/lucente.js generate",
+    "test": "node --test test/*.test.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "jiti": "^2.6.1"
+  },
+  "peerDependencies": {
+    "react": ">=19",
+    "react-native": ">=0.81"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "@types/react": "^19.2.3",
+    "react": "19.2.3",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2"
+  }
+}

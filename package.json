@@ -1,0 +1,16 @@
+{
+  "name": "lucente-workspace",
+  "private": true,
+  "packageManager": "pnpm@11.1.3",
+  "scripts": {
+    "build": "pnpm --filter lucente build",
+    "generate": "pnpm --filter lucente generate",
+    "test": "pnpm --filter lucente build && pnpm --filter lucente test",
+    "expo": "pnpm --filter lucente-example-expo start",
+    "bare": "pnpm --filter lucente-example-bare start",
+    "postinstall": "pnpm --filter lucente build && pnpm --filter lucente generate"
+  },
+  "devDependencies": {
+    "lucente": "workspace:*"
+  }
+}
